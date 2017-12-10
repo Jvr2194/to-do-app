@@ -3,18 +3,21 @@ function onReady() {
   const newToDoText = document.getElementById('newToDoText');
   const toDoList = document.getElementById('toDoList');
 
-  addToDoForm.addEventListener('submit', event => {
+addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
     let title = newToDoText.value;
     let newLi = document.createElement('li');
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
-    newli.textContent = title;
+    newLi.textContent = title;
     newLi.appendChild(checkbox);
     toDoList.appendChild(newLi);
     newToDoText.value = '';
   });
-
+function removeFromlist(){
+  var list = document.getElementById("toDoList");
+  list.removeChild(newLi)
+}
 }
 window.onload = function() {
 onReady();
